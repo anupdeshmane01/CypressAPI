@@ -1,4 +1,4 @@
-import restBooker from '../fixtures/restBooker.json'
+// import restBooker from '../fixtures/restBooker.json'
 describe('Create Booking',()=>{
 
     it('Create New Booking',()=>{

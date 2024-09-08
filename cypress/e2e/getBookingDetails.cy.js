@@ -4,7 +4,7 @@ describe('Get booking details', () => {
   
       cy.request({
         method: "GET",
-        url: "https://restful-booker.herokuapp.com/booking/785",
+        url: "https://restful-booker.herokuapp.com/booking/1576",
         headers: {
           Authorization: "Bearer dc39e491e666daf",
         },
@@ -20,7 +20,7 @@ describe('Get booking details', () => {
   
         // Verify booking details (example checks)
        
-        expect(response.body.firstname).to.equal("John");
+        expect(response.body.firstname).to.equal("Bob");
         expect(response.body.lastname).to.equal("Smith");
         expect(response.body.totalprice).to.equal(111);
         expect(response.body.depositpaid).to.be.true;
