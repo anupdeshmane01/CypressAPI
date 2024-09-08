@@ -29,7 +29,7 @@ jobs:
 
     # Run tests and generate Mocha Awesome report
     - name: Run Tests and Generate Report
-      run: npx cypress run
+      run: npm run test
 
     # Upload Mocha Awesome Report as an artifact
     - name: Upload Mocha Awesome Report

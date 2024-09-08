@@ -16,7 +16,7 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           record: false  # Set to true if you are recording your tests on the Cypress Dashboard
-          config-file: cypress.json  # Specify your Cypress config file if not using the default one
+          config-file: cypress.config.js  # Specify your Cypress config file if not using the default one
 
       # Upload Mocha Awesome Report as an artifact
       - name: Upload Mocha Awesome Report
