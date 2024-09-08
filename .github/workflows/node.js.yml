@@ -36,4 +36,4 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: mochawesome-report
-        path: mochawesome-report  # Adjust this path to where Mocha Awesome saves reports
+        path: reports # Adjust this path to where Mocha Awesome saves reports
