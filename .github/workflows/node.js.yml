@@ -29,3 +29,9 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: npm run test
+ # Upload Mocha Awesome Report as an artifact
+    - name: Upload Mocha Awesome Report
+      uses: actions/upload-artifact@v3
+      with:
+         name: mochawesome-report
+         path: mochawesome-report  # Adjust this path to where Mocha Awesome saves reports
