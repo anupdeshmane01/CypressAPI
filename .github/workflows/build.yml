@@ -1,17 +1,26 @@
-name: Cypress End-to-end tests
-on: push
+name: Cypress End-to-End Tests
+
+on: 
+  push:
+
 jobs:
   cypress-run:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       # Install npm dependencies, cache them correctly
       # and run all Cypress tests
       - name: Cypress run
         uses: cypress-io/github-action@v6
+        with:
+          record: false  # Set to true if you are recording your tests on the Cypress Dashboard
+          config-file: cypress.json  # Specify your Cypress config file if not using the default one
 
-   
-
-
-
+      # Upload Mocha Awesome Report as an artifact
+      - name: Upload Mocha Awesome Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: mochawesome-report
+          path: reports  # Adjust this path to where Mocha Awesome saves reports
