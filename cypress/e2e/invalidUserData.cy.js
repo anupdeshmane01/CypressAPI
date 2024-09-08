@@ -4,7 +4,7 @@ describe('API Automation with Cypress',()=>{
 
         cy.request({
             method: "GET",
-            url : 'https://gorest.co.in/public/v2/users/738681',
+            url : 'https://gorest.co.in/public/v2/users/7386802',
             headeras : {
                 Authorization: 'Bearer d125fbe9c3c570b9b715b14a954b6db74f4106cc860c57db135fb42c1dc01a48'
             },
@@ -12,7 +12,8 @@ describe('API Automation with Cypress',()=>{
         })
         .then((response)=>{
             cy.log(JSON.stringify(response))
-            expect(response.status).to.equal(404)
+            expect(response.status).to.equal(200)
+            expect(response.body.id).to.equal(7386802)
         })
     })
 })

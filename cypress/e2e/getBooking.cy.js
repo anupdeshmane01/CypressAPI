@@ -5,7 +5,7 @@ describe('Get booking ID',()=>{
         cy.request({
 
             method: "GET",
-            url:"https://restful-booker.herokuapp.com/booking/785",
+            url:"https://restful-booker.herokuapp.com/booking/",
             headers: {
                 Authorization: "Bearer dc39e491e666daf"
                 
