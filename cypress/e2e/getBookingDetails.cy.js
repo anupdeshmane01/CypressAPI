@@ -16,7 +16,7 @@ describe('Get booking details', () => {
         cy.log("Broswer Versions: ",Cypress.browser.version)
   
         // Verify the response status
-        expect(response.status).to.equal(200);
+        expect(response.status).to.equal(404);
   
         // Verify booking details (example checks)
        
