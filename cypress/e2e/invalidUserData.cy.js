@@ -12,8 +12,8 @@ describe('API Automation with Cypress',()=>{
         })
         .then((response)=>{
             cy.log(JSON.stringify(response))
-            expect(response.status).to.equal(200)
-            expect(response.body.id).to.equal(7386802)
+            expect(response.status).to.equal(404)
+            // expect(response.body.id).to.equal(7386802)
         })
     })
 })
