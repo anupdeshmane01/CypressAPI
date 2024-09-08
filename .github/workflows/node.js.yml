@@ -1,6 +1,3 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
-
 name: Node.js CI
 
 on:
@@ -11,7 +8,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -21,17 +17,23 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+
     - run: npm ci
     - run: npm run build --if-present
-    - run: npm run test
- # Upload Mocha Awesome Report as an artifact
+
+    # Run tests and generate Mocha Awesome report
+    - name: Run Tests and Generate Report
+      run: npx cypress run
+
+    # Upload Mocha Awesome Report as an artifact
     - name: Upload Mocha Awesome Report
       uses: actions/upload-artifact@v3
       with:
-         name: mochawesome-report
-         path: mochawesome-report  # Adjust this path to where Mocha Awesome saves reports
+        name: mochawesome-report
+        path: mochawesome-report  # Adjust this path to where Mocha Awesome saves reports
