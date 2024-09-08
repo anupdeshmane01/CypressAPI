@@ -17,14 +17,17 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-
+      
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
 
+    # Install dependencies
     - run: npm ci
+    
+    # Optionally, build the project
     - run: npm run build --if-present
 
     # Run tests and generate Mocha Awesome report
@@ -36,4 +39,4 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: mochawesome-report
-        path: reports # Adjust this path to where Mocha Awesome saves reports
+        path: reports  # Ensure this matches the path set in your Mocha configuration

@@ -15,6 +15,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
+          command: npm run test
           record: false  # Set to true if you are recording your tests on the Cypress Dashboard
           config-file: cypress.config.js  # Specify your Cypress config file if not using the default one
 
