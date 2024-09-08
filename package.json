@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx cypress run --config-file=cypress.config.js"
-  },
+  "test": "npx cypress run --reporter mochawesome --reporter-options reportDir=cypress/reports,overwrite=false,html=false,json=true"
+}
+,
   "author": "",
   "license": "ISC",
   "dependencies": {
