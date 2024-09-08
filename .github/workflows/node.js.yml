@@ -38,4 +38,4 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: mochawesome-report
-        path: cypress/reports  # Use the correct directory where the final report is saved
+        path: cypress\reports  # Use the correct directory where the final report is saved
