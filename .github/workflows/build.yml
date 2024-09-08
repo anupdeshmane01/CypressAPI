@@ -20,8 +20,8 @@ jobs:
           config-file: cypress.config.js  # Specify your Cypress config file if not using the default one
 
       # Upload Mocha Awesome Report as an artifact
-      - name: Upload Mocha Awesome Report
-        uses: actions/upload-artifact@v3
+      - name: Cypress Test Report
+        uses: actions/upload-artifact@v4
         with:
-          name: mochawesome-report
-          path: cypress\reports  # Adjust this path to where Mocha Awesome saves reports
+            name: MOCHAWESOME HTML REPORT
+            path: cypress/reports/.jsons # or path/to/artifact

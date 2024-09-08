@@ -34,8 +34,8 @@ jobs:
       run: ls -R cypress/reports/.jsons
 
     # Upload Mocha Awesome Report as an artifact
-    - name: Upload Mocha Awesome Report
+    - name: Cypress Mocha Awesome Report
       uses: actions/upload-artifact@v3
       with:
         name: mochawesome-report
-        path: cypress\reports  # Use the correct directory where the final report is saved
+        path: cypress/reports/.jsons  # Use the correct directory where the final report is saved
