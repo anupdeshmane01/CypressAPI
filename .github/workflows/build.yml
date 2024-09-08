@@ -24,4 +24,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: mochawesome-report
-          path: reports  # Adjust this path to where Mocha Awesome saves reports
+          path: cypress\reports  # Adjust this path to where Mocha Awesome saves reports
